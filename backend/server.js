@@ -9,7 +9,7 @@ server.use(express.static("frontend"));
 server.use(onEachRequest);
 server.get("/api/artist/:id", onGetArtistById); //hej med dig jeg hedder kaj//
 server.get("/api/albumsByReleaseDate", onGetAlbumsByReleaseDate);
-server.get("/api/artist/:artist/albums", onGetAlbumsForArtist);
+server.get("/api/artist/:artist/albums", onGetAlbumsForArtists);
 server.get("/api/album/:album/tracks", OnGetTracksForAlbum); //hej med dig jeg hedder kaj 2//
 server.listen(port, onServerReady);
 
@@ -45,7 +45,7 @@ async function onGetAlbumsByReleaseDate(request, response) {
   response.json(rows);
 }
 
-async function onGetAlbumsForArtist(request, response) {
+async function onGetAlbumsForArtists(request, response) {
   const artist = request.params.artist;
   const limit = request.query.limit;
   const dbResult = await db.query(
