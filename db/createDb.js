@@ -22,6 +22,7 @@ await db.query(`
         nationality char(2) not null
     )
 `);
+// denne query er en table på movies
 await db.query(`
     create table movies (
         movie_id         integer unique not null,
