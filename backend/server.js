@@ -10,7 +10,7 @@ server.use(onEachRequest);
 server.get("/api/artist/:id", onGetArtistById); //hej med dig jeg hedder kaj//
 server.get("/api/albumsByReleaseDate", onGetAlbumsByReleaseDate);
 server.get("/api/artist/:artist/albums", onGetAlbumsForArtist);
-server.get("/api/album/:album/tracks", OnGetTracksForAlbum);
+server.get("/api/album/:album/tracks", OnGetTracksForAlbum); //hej med dig jeg hedder kaj 2//
 server.listen(port, onServerReady);
 
 async function onGetArtistById(request, response) {
